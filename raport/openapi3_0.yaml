@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info:
+  title: UI Component API
+  version: 1.0.0
+paths:
+  /ui-components:
+    post:
+      summary: Create UI Component
+      description: Create a new UI component.
+      requestBody:
+        content:
+          text/plain:
+            example:
+              Build a section with 2 images and 3 paragraphs placed left
+      responses:
+        '201':
+          description: UI component created successfully
+        '400':
+          description: Input invalid
+          
