@@ -15,14 +15,14 @@ public class LanguageNode {
     private List<LanguageNode> children;
 
     public LanguageNode(String component) {
-       this.count = 0;
+       this.count = 1;
        this.component = component;
        this.styles = new ArrayList<>();
        this.children = new ArrayList<>();
     }
 
     public LanguageNode() {
-        this.count = 0;
+        this.count = 1;
         this.styles = new ArrayList<>();
         this.children = new ArrayList<>();
     }

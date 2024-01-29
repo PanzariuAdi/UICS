@@ -6,19 +6,20 @@ import opennlp.tools.postag.POSTaggerME;
 import opennlp.tools.tokenize.Tokenizer;
 import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
+import org.springframework.stereotype.Component;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
 
+@Component
 public class LanguageProcessor {
     public static String NLP_TOKEN_MODEL = "opennlp-en-ud-ewt-tokens-1.0-1.9.3.bin";
     public static String NLP_POS_MODEL = "opennlp-en-ud-ewt-pos-1.0-1.9.3.bin";
 
     private final POSTagger tagger;
     private final Tokenizer tokenizer;
-    private LanguageNode head;
 
     public LanguageProcessor() {
         try (InputStream modelIn = new FileInputStream(NLP_TOKEN_MODEL)) {
@@ -34,19 +35,17 @@ public class LanguageProcessor {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        head = new LanguageNode("head");
     }
 
-    public void process(String text) {
+    public LanguageNode process(String text) {
         String[] tokens = tokenizer.tokenize(text);
         String[] tags = tagger.tag(tokens);
 
-        int i = 0;
+        LanguageNode head = new LanguageNode("head");
         LanguageNode node = new LanguageNode();
         LanguageNode child = null;
 
-        while (i < tokens.length) {
+        for (int i = 0; i < tokens.length; i++) {
             String word = tokens[i];
             String tag = tags[i];
 
@@ -79,13 +78,14 @@ public class LanguageProcessor {
                     child = new LanguageNode();
                     break;
             }
-            i++;
         }
 
         printTree(head, "", true);
+
+        return head;
     }
 
-    public void printTree(LanguageNode root, String prefix, boolean isTail) {
+    private void printTree(LanguageNode root, String prefix, boolean isTail) {
         System.out.println(prefix + (isTail ? "└── " : "├── ") + root.getCount() + " " + root.getComponent() + root.getStyles());
 
         for (int i = 0; i < root.getChildren().size() - 1; i++) {
