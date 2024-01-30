@@ -1,5 +1,0 @@
-rdfschema
-dbpedia ontology
-foaf (friend of a friend)
-dublin core
-schema.org
