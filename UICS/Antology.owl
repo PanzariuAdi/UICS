@@ -1,0 +1,2051 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology"
+     xml:base="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:InteractiveControlsAntology="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology/1.0.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsAudioLabel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsAudioLabel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Audio"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Label"/>
+        <rdfs:comment xml:lang="en">An audio contains at maximum one label element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsButtonLabel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsButtonLabel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Button"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Label"/>
+        <rdfs:comment xml:lang="en">A header contains maximum one label element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsButtonThumbnail -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsButtonThumbnail">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Button"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Thumbnail"/>
+        <rdfs:comment xml:lang="en">A button contains maximum one thumbnail element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsContentSectionElements -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsContentSectionElements">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#ContentSection"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#CompositionalElement"/>
+        <rdfs:comment xml:lang="en">A header contains at least one compositional element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsContentSectionPageLabels -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsContentSectionPageLabels">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#PageContentSection"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Label"/>
+        <rdfs:comment xml:lang="en">A content section page contains at least one label element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsFooterElements -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsFooterElements">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Footer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#CompositionalElement"/>
+        <rdfs:comment xml:lang="en">A footer contains at least one compositional element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsHeaderElements -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsHeaderElements">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Header"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#CompositionalElement"/>
+        <rdfs:comment xml:lang="en">A header contains at least one compositional element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsHeadingText -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsHeadingText">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Heading"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Text"/>
+        <rdfs:comment xml:lang="en">An heading contains exactly one text element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsImageLabel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsImageLabel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Image"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Label"/>
+        <rdfs:comment xml:lang="en">A image contains maximum one label.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsImageList -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsImageList">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#PhotoGallery"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Image"/>
+        <rdfs:comment xml:lang="en">A photoGallery contains at least two images.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsInputLabel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsInputLabel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Input"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Label"/>
+        <rdfs:comment xml:lang="en">An input contains maximum one label element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsLabelText -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsLabelText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Input"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Text"/>
+        <rdfs:comment xml:lang="en">An input contains maximum one text element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsLinkLabel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsLinkLabel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Link"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Label"/>
+        <rdfs:comment xml:lang="en">A link contains exactly one label element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsListElements -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsListElements">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#List"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#CompositionalElement"/>
+        <rdfs:comment xml:lang="en">A list contains at least one compositional element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsNavigationBarSectionLinks -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsNavigationBarSectionLinks">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NavigationBarSection"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Link"/>
+        <rdfs:comment xml:lang="en">A navigation bar contains at least one link element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsParagraphText -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsParagraphText">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Paragraph"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Text"/>
+        <rdfs:comment xml:lang="en">A paragraph contains exactly one text element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsPhotoGalleryImage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsPhotoGalleryImage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#PhotoGallery"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Image"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsPhotoGalleryLabel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsPhotoGalleryLabel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#PhotoGallery"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Label"/>
+        <rdfs:comment xml:lang="en">A photo gallery contains maximum one label element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsTableElements -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsTableElements">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Table"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#CompositionalElement"/>
+        <rdfs:comment xml:lang="en">A table contains at least one compositional element.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsUserPhoto -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsUserPhoto">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#UserProfile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Photo"/>
+        <rdfs:comment xml:lang="en">A user profile contains exactly one user photo.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsUsername -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsUsername">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#UserProfile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Username"/>
+        <rdfs:comment xml:lang="en">A user profile contains exactly one username.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsVideoLabel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#containsVideoLabel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Video"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Label"/>
+        <rdfs:comment xml:lang="en">A video contains maximum one label.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#audioDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#audioDuration">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Audio"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property that states the duration of an audio in second.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#backgroundColor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#backgroundColor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#WebElement"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>black</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>blue</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>brown</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>gray</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>green</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>orange</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>purple</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first>red</rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first>white</rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                <rdf:first>yellow</rdf:first>
+                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property stating the background color of the element.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#borderColor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#borderColor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Table"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>black</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>blue</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>brown</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>gray</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>green</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>orange</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>purple</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first>red</rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first>white</rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                <rdf:first>yellow</rdf:first>
+                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property that states the color of the border.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#borderStyle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#borderStyle">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Table"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>dashed</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>dotted</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>double</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>groove</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>solid</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property that states the style of the border.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#borderWidth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#borderWidth">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Table"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>regular</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>thick</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>thin</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property that states the width of the border.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#buttonImageSource -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#buttonImageSource">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Button"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Property that states where the image of the button can be found.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#currentPlayTimeAudio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#currentPlayTimeAudio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Audio"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property stating where the audio is at the current moment during playtime.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#currentPlayTimeVideo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#currentPlayTimeVideo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Video"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property stating where the video is at the current moment during playtime.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#fontColor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#fontColor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextualElement"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>black</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>blue</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>brown</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>gray</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>green</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>orange</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>purple</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first>red</rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first>white</rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                <rdf:first>yellow</rdf:first>
+                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property that states the font color of the text.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#fontSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#fontSize">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextualElement"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property that states the font size of the text.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#fontStyle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#fontStyle">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextualElement"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>arial</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>brush script mt</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>courier new</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>garamond</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>georgia</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>tahoma</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>times new roman</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first>verdana</rdf:first>
+                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property that states the font style of the text.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasAlertMessageString -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasAlertMessageString">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Alert"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minLength rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</xsd:minLength>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxLength rdf:datatype="http://www.w3.org/2001/XMLSchema#int">64</xsd:maxLength>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasAudioSource -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasAudioSource">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Audio"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Property that states where the audio file is found.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasImageSource -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasImageSource">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Image"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Property that states where the image can be found.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasLabelString -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasLabelString">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Label"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minLength rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</xsd:minLength>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxLength rdf:datatype="http://www.w3.org/2001/XMLSchema#int">128</xsd:maxLength>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property that contains the text content of the label element.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasNumberColumns -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasNumberColumns">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Table"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property that states the number of columns of the table.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasNumberLines -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasNumberLines">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Table"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property that states the number of lines of the table.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasOrderedListStyle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasOrderedListStyle">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#OrderedList"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>decimal</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>lower-alpha</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>lower-latin</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>upper-alpha</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>upper-latin</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Specifies the type of list-item marker in a ordered list.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasReference -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasReference">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Link"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Property that states the reference of the link element. It can be either an id or an url.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasTextString -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasTextString">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Text"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Property that contains the text value of the text element.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasUnderline -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasUnderline">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextualElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Flag that states if the text is underlined or not.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasUnordoredListStyle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasUnordoredListStyle">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#UnordoredList"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>circle</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>disc</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>square</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Specifies the type of list-item marker in a unordored list.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasUsernameString -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasUsernameString">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Username"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minLength rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</xsd:minLength>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxLength rdf:datatype="http://www.w3.org/2001/XMLSchema#int">16</xsd:maxLength>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property that states the username of an person.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasVideoSource -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#hasVideoSource">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Property that states where the video file is found.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isBold -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isBold">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextualElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Flag that states if the text is bold or not.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isDisabled -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isDisabled">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Button"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Property that states if the button is disabled or not.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isImageOnButton -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isImageOnButton">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Button"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Flag that says if a button is an image or not.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isItalic -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isItalic">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextualElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Flag that states if the text is italic or not.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isLoopedAudio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isLoopedAudio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Audio"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Property saying if the video should reply automatically at finish or not.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isLoopedVideo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isLoopedVideo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Property saying if the video should reply automatically at finish or not.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isPageContentReference -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isPageContentReference">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Link"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Property that states is the link has the reference of an id or a url.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isTimedAlert -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#isTimedAlert">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Alert"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Flag stating if the alert is triggered after a spefic time or not.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#maxSlidingValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#maxSlidingValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Slider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">Property that states the maximum value the slider can take.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#minSlidingValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#minSlidingValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Slider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">Property that states the minimal value the slider can take.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#placingPosition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#placingPosition">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#CompositionalElement"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>above</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>below</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>left</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>right</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property stating how is the current element placed related to the previous element or even a group of identical elements.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#sectionArrange -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#sectionArrange">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Section"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>horizontally</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>vertically</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property stating how all elements should be arranged inside a section element.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#sectionOrder -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#sectionOrder">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Section"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>finish_To_Start</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>start_To_Finish</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property stating how all elements should be ordered inside a section element.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#sizeProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#sizeProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NonTextBasedElement"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>big</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>medium</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>small</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#tableArrange -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#tableArrange">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Table"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>columns</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>rows</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property stating how all elements should be arranged inside a table element.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#tableOrder -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#tableOrder">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Table"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>finish_To_Start</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>start_To_Finish</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property stating how all elements should be ordered inside a table element.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#timeBeforeAlert -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#timeBeforeAlert">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Alert"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property that states if the alert should after a specified time or on entering the page.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#videoDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#videoDuration">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Video"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property that states the duration of a video.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#videoQualityPixels -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#videoQualityPixels">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Video"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1080</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">144</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">240</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">360</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">480</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">720</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Property that states the quality of a video in pixels.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Alert -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Alert">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#WebElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#AsideSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#AsideSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#ContentSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Audio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Audio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NonTextBasedElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Button -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Button">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NonTextBasedElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Calendar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Calendar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NonTextBasedElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#CancelButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#CancelButton">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#CompositionalElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#CompositionalElement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#WebElement"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#StructuralElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#ContentSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#ContentSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Section"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#DownloadButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#DownloadButton">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#EditButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#EditButton">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Footer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Footer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Section"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Header -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Header">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Section"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Heading -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Heading">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextBasedElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Image -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Image">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NonTextBasedElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Input -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Input">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextBasedElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Label -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Label">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextualElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Link -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Link">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextBasedElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#List -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#List">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#StructuralElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Logo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Logo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#MainSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#MainSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#ContentSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NavigationBarSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NavigationBarSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NavigationSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NavigationSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NavigationSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Section"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NonTextBasedElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NonTextBasedElement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#CompositionalElement"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextBasedElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#OpacitySlider -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#OpacitySlider">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Slider"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#OrderedList -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#OrderedList">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#List"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#UnordoredList"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#PageContentSection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#PageContentSection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NavigationSection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Paragraph -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Paragraph">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextBasedElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Photo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Photo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#PhotoGallery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#PhotoGallery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NonTextBasedElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#ResetButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#ResetButton">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#SaveButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#SaveButton">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#SearchInput -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#SearchInput">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Input"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Section -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Section">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#StructuralElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Slider -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Slider">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NonTextBasedElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#StructuralElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#StructuralElement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#WebElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#SubmitButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#SubmitButton">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Button"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Table -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Table">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#StructuralElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Text -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Text">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextualElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextBasedElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextBasedElement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#CompositionalElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextInput -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextInput">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Input"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextualElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextualElement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Thumbnail -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Thumbnail">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#UnordoredList -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#UnordoredList">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#List"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#UserProfile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#UserProfile">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NonTextBasedElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Username -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Username">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#TextualElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Video -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Video">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NonTextBasedElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#WebElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#WebElement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#ZoomSlider -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#ZoomSlider">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Slider"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Aside -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Aside">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#AsideSection"/>
+        <InteractiveControlsAntology:containsContentSectionElements rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_paragraph"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:sectionArrange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">horizontally</InteractiveControlsAntology:sectionArrange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Button -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Button">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Button"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:buttonImageSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/image?type=button</InteractiveControlsAntology:buttonImageSource>
+        <InteractiveControlsAntology:isDisabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:isDisabled>
+        <InteractiveControlsAntology:isImageOnButton rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</InteractiveControlsAntology:isImageOnButton>
+        <InteractiveControlsAntology:sizeProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</InteractiveControlsAntology:sizeProperty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Header -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Header">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Header"/>
+        <InteractiveControlsAntology:containsContentSectionElements rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_paragraph"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:sectionArrange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">horizontally</InteractiveControlsAntology:sectionArrange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Heading -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Heading">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Heading"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:fontColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">black</InteractiveControlsAntology:fontColor>
+        <InteractiveControlsAntology:fontSize rdf:datatype="http://www.w3.org/2001/XMLSchema#int">32</InteractiveControlsAntology:fontSize>
+        <InteractiveControlsAntology:fontStyle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arial</InteractiveControlsAntology:fontStyle>
+        <InteractiveControlsAntology:hasTextString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HEADING</InteractiveControlsAntology:hasTextString>
+        <InteractiveControlsAntology:hasUnderline rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:hasUnderline>
+        <InteractiveControlsAntology:isBold rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</InteractiveControlsAntology:isBold>
+        <InteractiveControlsAntology:isItalic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:isItalic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Image -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Image">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Image"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:hasImageSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/image?type=default</InteractiveControlsAntology:hasImageSource>
+        <InteractiveControlsAntology:sizeProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</InteractiveControlsAntology:sizeProperty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Input -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Input">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#SearchInput"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:fontColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">black</InteractiveControlsAntology:fontColor>
+        <InteractiveControlsAntology:fontSize rdf:datatype="http://www.w3.org/2001/XMLSchema#int">16</InteractiveControlsAntology:fontSize>
+        <InteractiveControlsAntology:fontStyle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arial</InteractiveControlsAntology:fontStyle>
+        <InteractiveControlsAntology:hasUnderline rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:hasUnderline>
+        <InteractiveControlsAntology:isBold rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:isBold>
+        <InteractiveControlsAntology:isItalic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:isItalic>
+        <InteractiveControlsAntology:sizeProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</InteractiveControlsAntology:sizeProperty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Label_Link -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Label_Link">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Label"/>
+        <InteractiveControlsAntology:fontColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">black</InteractiveControlsAntology:fontColor>
+        <InteractiveControlsAntology:fontSize rdf:datatype="http://www.w3.org/2001/XMLSchema#int">16</InteractiveControlsAntology:fontSize>
+        <InteractiveControlsAntology:fontStyle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arial</InteractiveControlsAntology:fontStyle>
+        <InteractiveControlsAntology:hasLabelString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Link</InteractiveControlsAntology:hasLabelString>
+        <InteractiveControlsAntology:hasUnderline rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:hasUnderline>
+        <InteractiveControlsAntology:isBold rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:isBold>
+        <InteractiveControlsAntology:isItalic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:isItalic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_List -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_List">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#OrderedList"/>
+        <InteractiveControlsAntology:containsListElements rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_paragraph"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:hasOrderedListStyle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decimal</InteractiveControlsAntology:hasOrderedListStyle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Main -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Main">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#MainSection"/>
+        <InteractiveControlsAntology:containsContentSectionElements rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_paragraph"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:sectionArrange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">horizontally</InteractiveControlsAntology:sectionArrange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Navbar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Navbar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#NavigationBarSection"/>
+        <InteractiveControlsAntology:containsNavigationBarSectionLinks rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_link"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Slider -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Slider">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Slider"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:maxSlidingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</InteractiveControlsAntology:maxSlidingValue>
+        <InteractiveControlsAntology:minSlidingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</InteractiveControlsAntology:minSlidingValue>
+        <InteractiveControlsAntology:sizeProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</InteractiveControlsAntology:sizeProperty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_alert -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_alert">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Alert"/>
+        <InteractiveControlsAntology:hasAlertMessageString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Welcome to the website!</InteractiveControlsAntology:hasAlertMessageString>
+        <InteractiveControlsAntology:isTimedAlert rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:isTimedAlert>
+        <InteractiveControlsAntology:timeBeforeAlert rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</InteractiveControlsAntology:timeBeforeAlert>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_audio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_audio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Audio"/>
+        <InteractiveControlsAntology:audioDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#int">60</InteractiveControlsAntology:audioDuration>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:currentPlayTimeAudio rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</InteractiveControlsAntology:currentPlayTimeAudio>
+        <InteractiveControlsAntology:hasAudioSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/audio?seconds=60</InteractiveControlsAntology:hasAudioSource>
+        <InteractiveControlsAntology:isLoopedAudio rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:isLoopedAudio>
+        <InteractiveControlsAntology:sizeProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</InteractiveControlsAntology:sizeProperty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_calendar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_calendar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Calendar"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:sizeProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</InteractiveControlsAntology:sizeProperty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_footer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_footer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Footer"/>
+        <InteractiveControlsAntology:containsContentSectionElements rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Image"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:sectionArrange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">horizontally</InteractiveControlsAntology:sectionArrange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_link -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_link">
+        <InteractiveControlsAntology:containsLinkLabel rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Label_Link"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:hasReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://profs.info.uaic.ro/~busaco/profile.html</InteractiveControlsAntology:hasReference>
+        <InteractiveControlsAntology:isPageContentReference rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:isPageContentReference>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_paragraph -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_paragraph">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Paragraph"/>
+        <InteractiveControlsAntology:fontColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">black</InteractiveControlsAntology:fontColor>
+        <InteractiveControlsAntology:fontSize rdf:datatype="http://www.w3.org/2001/XMLSchema#int">16</InteractiveControlsAntology:fontSize>
+        <InteractiveControlsAntology:fontStyle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arial</InteractiveControlsAntology:fontStyle>
+        <InteractiveControlsAntology:hasTextString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a paragraph.</InteractiveControlsAntology:hasTextString>
+        <InteractiveControlsAntology:hasUnderline rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:hasUnderline>
+        <InteractiveControlsAntology:isBold rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:isBold>
+        <InteractiveControlsAntology:isItalic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:isItalic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_photo_gallery -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_photo_gallery">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#PhotoGallery"/>
+        <InteractiveControlsAntology:containsPhotoGalleryImage rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Image"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:sizeProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</InteractiveControlsAntology:sizeProperty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_profile_photo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_profile_photo">
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:hasImageSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/image?type=profile</InteractiveControlsAntology:hasImageSource>
+        <InteractiveControlsAntology:sizeProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</InteractiveControlsAntology:sizeProperty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_table -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_table">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Table"/>
+        <InteractiveControlsAntology:containsTableElements rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_Image"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:borderColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">black</InteractiveControlsAntology:borderColor>
+        <InteractiveControlsAntology:borderStyle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">solid</InteractiveControlsAntology:borderStyle>
+        <InteractiveControlsAntology:borderWidth rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thin</InteractiveControlsAntology:borderWidth>
+        <InteractiveControlsAntology:hasNumberColumns rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</InteractiveControlsAntology:hasNumberColumns>
+        <InteractiveControlsAntology:hasNumberLines rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</InteractiveControlsAntology:hasNumberLines>
+        <InteractiveControlsAntology:tableArrange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rows</InteractiveControlsAntology:tableArrange>
+        <InteractiveControlsAntology:tableOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#string">start_To_Finish</InteractiveControlsAntology:tableOrder>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_user_name -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_user_name">
+        <InteractiveControlsAntology:fontColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">black</InteractiveControlsAntology:fontColor>
+        <InteractiveControlsAntology:fontSize rdf:datatype="http://www.w3.org/2001/XMLSchema#int">16</InteractiveControlsAntology:fontSize>
+        <InteractiveControlsAntology:fontStyle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arial</InteractiveControlsAntology:fontStyle>
+        <InteractiveControlsAntology:hasUnderline rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:hasUnderline>
+        <InteractiveControlsAntology:hasUsernameString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">username</InteractiveControlsAntology:hasUsernameString>
+        <InteractiveControlsAntology:isBold rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</InteractiveControlsAntology:isBold>
+        <InteractiveControlsAntology:isItalic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:isItalic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_user_profile -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_user_profile">
+        <InteractiveControlsAntology:containsUserPhoto rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_profile_photo"/>
+        <InteractiveControlsAntology:containsUsername rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_user_name"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:sizeProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</InteractiveControlsAntology:sizeProperty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_video -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Default_video">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pread/ontologies/2022/11/InteractiveControlsAntology#Video"/>
+        <InteractiveControlsAntology:backgroundColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white</InteractiveControlsAntology:backgroundColor>
+        <InteractiveControlsAntology:currentPlayTimeVideo rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</InteractiveControlsAntology:currentPlayTimeVideo>
+        <InteractiveControlsAntology:hasVideoSource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/video?seconds=60</InteractiveControlsAntology:hasVideoSource>
+        <InteractiveControlsAntology:isLoopedVideo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</InteractiveControlsAntology:isLoopedVideo>
+        <InteractiveControlsAntology:sizeProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</InteractiveControlsAntology:sizeProperty>
+        <InteractiveControlsAntology:videoDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#int">60</InteractiveControlsAntology:videoDuration>
+        <InteractiveControlsAntology:videoQualityPixels rdf:datatype="http://www.w3.org/2001/XMLSchema#int">720</InteractiveControlsAntology:videoQualityPixels>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
