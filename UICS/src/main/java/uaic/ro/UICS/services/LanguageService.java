@@ -33,10 +33,12 @@ public class LanguageService {
         String result = sparqlQueryExecutor.getForNode(root);
 
         Node currentNode = getNodeFromResult(result);
-        System.out.println(root.getStyles());
         GraphUtils.addCustomStyles(root, currentNode);
 
-        parent.addChild(currentNode);
+        for (int i = 0; i < root.getCount(); i++) {
+            parent.addChild(currentNode);
+        }
+
         root.getChildren().forEach(child -> {
             constructGraph(child, currentNode);
         });

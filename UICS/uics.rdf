@@ -276,18 +276,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#Footer -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#Footer">
-        <rdf:type rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#Footer"/>
-        <ont:backgroundColor>yellow</ont:backgroundColor>
-        <ont:color>black</ont:color>
-        <ont:padding rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</ont:padding>
-        <ont:text>This is a footer</ont:text>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#accordion -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#accordion">
@@ -312,6 +300,18 @@
         <ont:backgroundColor>black</ont:backgroundColor>
         <ont:color>white</ont:color>
         <ont:text>Button</ont:text>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#footer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#footer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#Footer"/>
+        <ont:align>center</ont:align>
+        <ont:backgroundColor>yellow</ont:backgroundColor>
+        <ont:padding rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</ont:padding>
+        <ont:text>This is a footer</ont:text>
     </owl:NamedIndividual>
     
 
@@ -399,7 +399,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#section">
         <rdf:type rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#Section"/>
-        <ont:text>This is a title</ont:text>
+        <ont:text>This is a section</ont:text>
     </owl:NamedIndividual>
     
 
