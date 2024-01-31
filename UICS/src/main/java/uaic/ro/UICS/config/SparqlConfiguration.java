@@ -15,7 +15,7 @@ import java.io.InputStream;
 @Configuration
 public class SparqlConfiguration {
     private final String RDF_PATH = "uics.rdf";
-    private final String PREFIX = "http://www.semanticweb.org/adi/ontologies/2024/0/uics/";
+    private final String PREFIX = "http://www.semanticweb.org/adi/ontologies/2024/0/ont/";
 
     @Bean
     public CommandLineRunner startFusekiServer() {

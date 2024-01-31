@@ -41,7 +41,7 @@ public class LanguageProcessor {
         String[] tokens = tokenizer.tokenize(text);
         String[] tags = tagger.tag(tokens);
 
-        LanguageNode head = new LanguageNode("head");
+        LanguageNode head = new LanguageNode("section");
         LanguageNode node = new LanguageNode();
         LanguageNode child = null;
 
