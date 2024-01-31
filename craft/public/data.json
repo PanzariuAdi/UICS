@@ -1,0 +1,37 @@
+{
+    "children":[
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "atribures":{
+                                "hasAling": "center",
+                                "hasbackgroudColor": "white"
+                            },
+                            "type": "Header"
+                        }
+                    ],
+                    "atribures":{
+                        "hasColoer": "black",
+                        "hasAling": "center",
+                        "hasbackgroudColor": "white",
+                        "hasFontSize": "16" 
+                    },
+                    "type": "Title"
+                },
+                {
+                    "children":[],
+                    "atribures": {
+                        "hasAling":"center",
+                        "hasbackgroudColor" :"white"
+
+                    },
+                    "type":"Header"
+                }
+            ],
+            "type" : "Section"
+        }
+    ]
+}

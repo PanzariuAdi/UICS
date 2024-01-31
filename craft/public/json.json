@@ -1,0 +1,127 @@
+{
+    "type": "Section",
+    "children": [
+      {
+        "type": "Header",
+        "children": [],
+        "attributesMap": {
+          "hasColor": "white",
+          "hasBackgroundColor": "navy",
+          "hasFontSize": "24",
+          "hasAlign": "center",
+          "hasPadding": "20px",
+          "text": "This is a Header"
+        }
+      },
+      {
+        "type": "Navbar",
+        "children": [],
+        "attributesMap": {
+          "hasBackgroundColor": "lightgray",
+          "hasAlign": "center",
+          "hasPadding": "15px",
+          "hasFontSize": "18"
+        }
+      },
+      {
+        "type": "Banner",
+        "children": [],
+        "attributesMap": {
+          "hasBackgroundColor": "lightgreen",
+          "hasColor": "black",
+          "hasPadding": "10px"
+        }
+      },
+      {
+        "type": "Card",
+        "children": [
+          {
+            "type": "Image",
+
+            "alt": "Card Image"
+          },
+          {
+            "type": "Title",
+            "children": ["Card Title"]
+          },
+          {
+            "type": "Paragraph",
+            "children": ["This is some content inside a card."]
+          },
+          {
+            "type": "Button",
+            "children": ["Learn More"],
+            "attributesMap": {
+              "hasBackgroundColor": "blue",
+              "hasColor": "white"
+            }
+          }
+        ],
+        "attributesMap": {
+          "hasMargin": "10px",
+          "hasPadding": "15px"
+        }
+      },
+      {
+        "type": "PhotoGallery",
+        "attributesMap": {
+          "hasPadding": "20px",
+          "hasMargin": "10px",
+          "hasBackgroundColor": "#f0f0f0"
+        }
+      },
+      
+      {
+        "type": "Accordion",
+        "children": ["This is some hidden content in the accordion."],
+        "attributesMap": {
+          "hasBackgroundColor": "lightyellow",
+          "hasPadding": "10px"
+        }
+      },
+      {
+        "type": "List",
+        "children": [
+          {
+            "type": "ListItem",
+            "children": ["List Item 1"]
+          },
+          {
+            "type": "ListItem",
+            "children": ["List Item 2"]
+          }
+        ],
+        "attributesMap": {
+          "hasColor": "darkred"
+        }
+      },
+      {
+        "type": "Table",
+        "headers": ["Column 1", "Column 2", "Column 3"],
+        "rows": [
+          ["Row 1 Col 1", "Row 1 Col 2", "Row 1 Col 3"],
+          ["Row 2 Col 1", "Row 2 Col 2", "Row 2 Col 3"]
+        ],
+        "attributesMap": {
+          "hasBorder": "1px solid black"
+        }
+      },
+      {
+        "type": "Footer",
+        "children": ["© 2024 My Website"],
+        "attributesMap": {
+          "hasBackgroundColor": "navy",
+          "hasColor": "white",
+          "hasAlign": "center",
+          "hasPadding": "10px",
+          "hasFontSize": "14"
+        }
+      }
+    ],
+    "attributesMap": {
+      "hasMargin": "0",
+      "hasPadding": "0",
+      "hasBoxSizing": "border-box"
+  }
+}
+  

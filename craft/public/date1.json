@@ -1,0 +1,33 @@
+{
+  "type": "Section",
+  "children": [
+      {
+          "type": "Header",
+          "children": [
+              {
+                  "type": "Paragraph",
+                  "children": [],
+                  "attributesMap": {
+                      "hasColor": "red",
+                      "color": "black",
+                      "fontSize": "small",
+                      "text": "This is a paragraph",
+                      "align": "left"
+                  }
+              },
+              {
+                  "type": "Image",
+                  "children": [],
+                  "attributesMap": {
+                      "padding": "20",
+                      "margin": "20"
+                  }
+              }
+          ],
+          "attributesMap": {}
+      }
+  ],
+  "attributesMap": {
+      "text": "This is a title"
+  }
+}
