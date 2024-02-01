@@ -6,8 +6,8 @@ const Section = ({ children, style }) => (
     style={{
       ...style,
       border: "1px solid gray",
-      margin: "100px",
-      padding: "250px",
+      margin: "50px",
+      padding: "25px",
     }}
   >
     {children}
@@ -235,6 +235,14 @@ const HtmlCodePage = ({ jsonData }) => {
   );
 };
 
+const HtmlCodePageV2 = ({ data }) => {
+  return (
+    <div>
+      <pre><code>{data}</code></pre>
+    </div>
+  );
+}
+
 const Test = () => {
   const [jsonData, setJsonData] = useState([]);
 
@@ -242,11 +250,13 @@ const Test = () => {
     setJsonData([data]);
   };
 
+  const result = jsonData.map((item, index) => renderComponentFromJSON(item, index));
+
   return (
-    <div className="Test">
+    <div className="bg-gray-100">
       <Chat handleButtonClick={handleButtonClick} />
-      {jsonData.map((item, index) => renderComponentFromJSON(item, index))}
-      <HtmlCodePage jsonData={jsonData} />
+      { result }
+      { <HtmlCodePageV2 data={result} /> }
     </div>
   );
 };

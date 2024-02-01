@@ -96,4 +96,10 @@ public class LanguageProcessor {
             printTree(root.getChildren().get(root.getChildren().size() - 1), prefix + (isTail ? "    " : "│   "), true);
         }
     }
+
+    public static void main(String[] args) {
+        LanguageProcessor languageProcessor = new LanguageProcessor();
+
+        System.out.println("TEST");
+    }
 }

@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+
 const ToggleableTextBox = (props) => {
   const [jsonData, setJsonData] = useState([]);
-  const [isVisible, setIsVisible] = useState(false);
-  const [text, setText] = useState("Footer with 5 paragraph red and 5 image.");
-  const toggleVisibility = () => setIsVisible(!isVisible);
+  const [text, setText] = useState("");
+
+  const handleChange = (event) => {
+    setText(event.target.value);
+  };
 
   const handeClick = () => {
     const requestUrl = `http://localhost:8080/?input=${text}`;
@@ -17,22 +20,22 @@ const ToggleableTextBox = (props) => {
   };
 
   return (
-    <div style={{ border: "1px solid black", padding: "10px", margin: "10px" }}>
-      <div
-        onClick={toggleVisibility}
-        style={{ cursor: "pointer", marginBottom: "5px" }}
-      >
-        Click to {isVisible ? "hide" : "show"} text box
-      </div>
-      {isVisible && (
-        <input
-          type="text"
-          value={text}
-          style={{ padding: "5px", margin: "5px" }}
-        />
-      )}
+    <div className="mb-6 p-5 flex flex-col items-center justify-center bg-gray-200">
+      <input
+        type="text"
+        className="block w-full p-4 text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-150 "
+        onChange={handleChange}
+        value={text}
+        style={{ padding: "5px", margin: "5px" }}
+        placeholder="Insert prompt"
+      />
 
-      <button onClick={handeClick}>Click Me</button>
+      <button type="button"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 my-5"
+              onClick={handeClick}
+              >
+              Get results
+      </button>
     </div>
   );
 };
