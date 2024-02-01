@@ -223,23 +223,25 @@ const renderComponentToString = (json, indentLevel = 0) => {
   }
 };
 
-const HtmlCodePage = ({ jsonData }) => {
-  const htmlString = jsonData
+const HtmlCodePage = ({ data }) => {
+  const [text, setText] = useState(data);
+
+  const handleChange = (event) => {
+    setText(event.target.value);
+  };
+
+  const htmlString = data
     .map((item) => renderComponentToString(item))
     .join("\n");
 
   return (
-    <div style={{ whiteSpace: "pre-wrap" }}>
-      <code>{htmlString}</code>
-    </div>
-  );
-};
-
-const HtmlCodePageV2 = ({ data }) => {
-  return (
-    <div>
-      <pre><code>{data}</code></pre>
-    </div>
+    <textarea
+     rows="25"
+     value={htmlString}
+     onChange={handleChange}
+     className="block p-2.5 w-full text-sm"
+     >
+     </textarea>
   );
 }
 
@@ -250,13 +252,23 @@ const Test = () => {
     setJsonData([data]);
   };
 
-  const result = jsonData.map((item, index) => renderComponentFromJSON(item, index));
+  const data = jsonData.map((item, index) => renderComponentFromJSON(item, index));
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 justify-center">
       <Chat handleButtonClick={handleButtonClick} />
-      { result }
-      { <HtmlCodePageV2 data={result} /> }
+      { data }
+
+      <div className="flex flex-col items-center justify-center">
+        {<HtmlCodePage data={jsonData} />}
+
+        <button type="button"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 my-5"
+        >
+          Update
+        </button>
+      </div>
+
     </div>
   );
 };
