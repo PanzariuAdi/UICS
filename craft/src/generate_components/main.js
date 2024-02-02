@@ -151,7 +151,7 @@ const convertToCssProperty = (key, value) => {
 const renderComponentFromJSON = (json, key) => {
   if (!json || typeof json !== "object") return null;
 
-  const { type, children, attributesMap, additional } = json;
+  const { type, children, attributesMap } = json;
 
   const componentMap = {
     Section: Section,
@@ -176,7 +176,7 @@ const renderComponentFromJSON = (json, key) => {
   const textContent = attributesMap?.text; // Extract text content if available
 
   return (
-    <Component key={key} style={style} additional={additional}>
+    <Component key={key} style={style} >
       {textContent && <div>{textContent} </div>}{" "}
       {/* Render text content if available */}
       {children &&
@@ -196,14 +196,12 @@ const renderComponentFromJSON = (json, key) => {
 const renderComponentToString = (json, indentLevel = 0) => {
   if (!json || typeof json !== "object") return "";
 
-  const { type, children, attributesMap, additional } = json;
+  const { type, children, attributesMap } = json;
   const tag = type || "div";
   const style = convertAttributesToStyle(attributesMap);
   const styleString = Object.entries(style)
     .map(([key, value]) => `${key}: ${value}`)
     .join("; ");
-  const additionalString = Object.entries(additional)
-    .map(([key, value]) => `${key}="${value}"`)
   const textContent = attributesMap?.text || "";
   
   const indent = " ".repeat(indentLevel * 2); // Adjust indent size as needed
@@ -218,7 +216,7 @@ const renderComponentToString = (json, indentLevel = 0) => {
       .join("");
   }
 
-  let openingTag = `<${tag} style="${styleString}" ${additionalString}>`;
+  let openingTag = `<${tag} style="${styleString}">`;
   let closingTag = `</${tag}>`;
 
   if (childrenString) {
@@ -257,18 +255,12 @@ const HtmlCodePage = ({ data, onUpdate }) => {
       return attributesMap;
     };
 
-    const additionalStringToAdditionalMap = (additionalString) => {
-      const additionalMap = {"src": "/dog.jpg"};
-      return additionalMap;
-    };
-
     // Recursive function to process each node and build JSON
     const processNode = (node) => {
       if (node.nodeType === Node.ELEMENT_NODE) {
         const type = node.tagName.toLowerCase(); // Get the tag name in lowercase
         const style = node.getAttribute("style");
         const attributesMap = style ? styleStringToAttributesMap(style) : {};
-        const additional = type == "img" ? additionalStringToAdditionalMap(node.getAttribute("additional")) : {};
         const children = Array.from(node.childNodes)
           .map(processNode)
           .filter(Boolean); // Process child nodes recursively
@@ -279,7 +271,6 @@ const HtmlCodePage = ({ data, onUpdate }) => {
           type: tyype,
           children,
           attributesMap,
-          additional,
         }; // Capitalize the first letter of type
       } else if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
         // If a text node has content, treat it as a special case, potentially as a Text type if needed
