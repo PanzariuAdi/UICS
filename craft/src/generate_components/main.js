@@ -223,52 +223,118 @@ const renderComponentToString = (json, indentLevel = 0) => {
   }
 };
 
-const HtmlCodePage = ({ data }) => {
-  const [text, setText] = useState(data);
+// const HtmlCodePage = ({ data }) => {
+//   const [text, setText] = useState(data);
+
+//   const handleChange = (event) => {
+//     setText(event.target.value);
+//   };
+
+//   const htmlString = data
+//     .map((item) => renderComponentToString(item))
+//     .join("\n");
+
+//   return (
+//     <textarea
+//       rows="25"
+//       value={htmlString}
+//       onChange={handleChange}
+//       className="block p-2.5 w-full text-sm"
+//     ></textarea>
+//   );
+// };
+
+const HtmlCodePage = ({ data, onUpdate }) => {
+  const [htmlString, setHtmlString] = useState("");
+
+  useEffect(() => {
+    // Initialize the textarea with the current JSON data rendered as HTML-like strings
+    const initialHtml = data
+      .map((item) => renderComponentToString(item))
+      .join("\n");
+    setHtmlString(initialHtml);
+  }, [data]);
 
   const handleChange = (event) => {
-    setText(event.target.value);
+    setHtmlString(event.target.value);
   };
 
-  const htmlString = data
-    .map((item) => renderComponentToString(item))
-    .join("\n");
+  const parseHtmlLikeContentToJson = (htmlString) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(`<div>${htmlString}</div>`, "text/html");
+    const processNode = (node) => {
+      const json = { children: [] };
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        json.type = node.tagName;
+        const styleString = node.getAttribute("style");
+        if (styleString) {
+          json.attributesMap = styleString.split(";").reduce((acc, current) => {
+            const [key, value] = current.split(":").map((part) => part.trim());
+            if (key && value) {
+              acc[key] = value;
+            }
+            return acc;
+          }, {});
+        }
+        node.childNodes.forEach((child) => {
+          const childJson = processNode(child);
+          if (childJson) {
+            json.children.push(childJson);
+          }
+        });
+        return json;
+      } else if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+        return { type: "Text", text: node.textContent.trim() };
+      }
+    };
+    const rootNode = doc.body.firstChild;
+    return processNode(rootNode);
+  };
+
+  const handleUpdate = () => {
+    const updatedJson = parseHtmlLikeContentToJson(htmlString);
+    onUpdate(updatedJson);
+  };
 
   return (
-    <textarea
-     rows="25"
-     value={htmlString}
-     onChange={handleChange}
-     className="block p-2.5 w-full text-sm"
-     >
-     </textarea>
+    <>
+      <textarea
+        rows="25"
+        value={htmlString}
+        onChange={handleChange}
+        className="block p-2.5 w-full text-sm"
+      ></textarea>
+      <button onClick={handleUpdate} className="your-update-button-classes">
+        Update
+      </button>
+    </>
   );
-}
+};
 
 const Test = () => {
   const [jsonData, setJsonData] = useState([]);
 
   const handleButtonClick = (data) => {
-    setJsonData([data]);
+    setJsonData([data]); // Assuming data is an object, not an array
   };
 
-  const data = jsonData.map((item, index) => renderComponentFromJSON(item, index));
+  const handleJsonUpdate = (updatedJson) => {
+    setJsonData(Array.isArray(updatedJson) ? updatedJson : [updatedJson]);
+  };
+
+  const data = jsonData.map((item, index) =>
+    renderComponentFromJSON(item, index)
+  );
 
   return (
     <div className="bg-gray-100 justify-center">
       <Chat handleButtonClick={handleButtonClick} />
-      { data }
+      {data}
 
       <div className="flex flex-col items-center justify-center">
-        {<HtmlCodePage data={jsonData} />}
-
-        <button type="button"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 my-5"
-        >
-          Update
-        </button>
+        <HtmlCodePage data={jsonData} onUpdate={handleJsonUpdate} />
+        {/* The update button has been moved into HtmlCodePage */}
       </div>
-
     </div>
   );
 };
