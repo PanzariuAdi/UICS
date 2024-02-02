@@ -82,6 +82,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#textAlign -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#textAlign"/>
+    
+
+
     <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#type -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#type"/>
@@ -379,10 +385,10 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#paragraph">
         <rdf:type rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#Paragraph"/>
-        <ont:align>left</ont:align>
         <ont:color>black</ont:color>
         <ont:fontSize>small</ont:fontSize>
         <ont:text>This is a paragraph</ont:text>
+        <ont:textAlign>left</ont:textAlign>
     </owl:NamedIndividual>
     
 
@@ -408,9 +414,10 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#title">
         <rdf:type rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#Title"/>
-        <ont:align>center</ont:align>
         <ont:color>red</ont:color>
         <ont:fontSize>large</ont:fontSize>
+        <ont:text>This is a title</ont:text>
+        <ont:textAlign>left</ont:textAlign>
     </owl:NamedIndividual>
 </rdf:RDF>
 

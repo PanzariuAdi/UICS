@@ -14,7 +14,7 @@ const Section = ({ children, style }) => (
   </div>
 );
 
-const Title = ({ children, style }) => <div style={style}>{children}</div>;
+const Title = ({ children, style }) => <h1 style={style}>{children}</h1>;
 
 const Header = ({ children, style }) => <div style={style}>{children}</div>;
 
@@ -124,7 +124,6 @@ const convertAttributesToStyle = (attributesMap) => {
           camelCaseKey,
           attributesMap[key]
         );
-        console.log(style);
         return { ...style, ...cssProperty };
       }, {})
     : {};
@@ -137,9 +136,13 @@ const convertToCssProperty = (key, value) => {
     case "hasAlign":
       return { textAlign: value };
     case "hasFontSize":
-      return { fontSize: `${value}px` };
+      return { fontSize: `${value}` };
     case "hasBackgroundColor":
       return { backgroundColor: value };
+    case "padding":
+      return { padding: `${value}`};
+    case "margin":
+      return { margin: `${value}`};
     default:
       return { [key]: value };
   }
@@ -148,7 +151,7 @@ const convertToCssProperty = (key, value) => {
 const renderComponentFromJSON = (json, key) => {
   if (!json || typeof json !== "object") return null;
 
-  const { type, children, attributesMap } = json;
+  const { type, children, attributesMap, additional } = json;
 
   const componentMap = {
     Section: Section,
@@ -173,8 +176,8 @@ const renderComponentFromJSON = (json, key) => {
   const textContent = attributesMap?.text; // Extract text content if available
 
   return (
-    <Component key={key} style={style}>
-      {textContent && <div>{textContent}</div>}{" "}
+    <Component key={key} style={style} additional={additional}>
+      {textContent && <div>{textContent} </div>}{" "}
       {/* Render text content if available */}
       {children &&
         children.map((child, index) =>
@@ -193,14 +196,16 @@ const renderComponentFromJSON = (json, key) => {
 const renderComponentToString = (json, indentLevel = 0) => {
   if (!json || typeof json !== "object") return "";
 
-  const { type, children, attributesMap } = json;
+  const { type, children, attributesMap, additional } = json;
   const tag = type || "div";
   const style = convertAttributesToStyle(attributesMap);
   const styleString = Object.entries(style)
     .map(([key, value]) => `${key}: ${value}`)
     .join("; ");
+  const additionalString = Object.entries(additional)
+    .map(([key, value]) => `${key}="${value}"`)
   const textContent = attributesMap?.text || "";
-
+  
   const indent = " ".repeat(indentLevel * 2); // Adjust indent size as needed
   let childrenString = "";
   if (children) {
@@ -213,7 +218,7 @@ const renderComponentToString = (json, indentLevel = 0) => {
       .join("");
   }
 
-  let openingTag = `<${tag} style="${styleString}">`;
+  let openingTag = `<${tag} style="${styleString}" ${additionalString}>`;
   let closingTag = `</${tag}>`;
 
   if (childrenString) {
@@ -222,27 +227,6 @@ const renderComponentToString = (json, indentLevel = 0) => {
     return `${indent}${openingTag}${textContent}${closingTag}`;
   }
 };
-
-// const HtmlCodePage = ({ data }) => {
-//   const [text, setText] = useState(data);
-
-//   const handleChange = (event) => {
-//     setText(event.target.value);
-//   };
-
-//   const htmlString = data
-//     .map((item) => renderComponentToString(item))
-//     .join("\n");
-
-//   return (
-//     <textarea
-//       rows="25"
-//       value={htmlString}
-//       onChange={handleChange}
-//       className="block p-2.5 w-full text-sm"
-//     ></textarea>
-//   );
-// };
 
 const HtmlCodePage = ({ data, onUpdate }) => {
   const [htmlString, setHtmlString] = useState("");
@@ -273,20 +257,29 @@ const HtmlCodePage = ({ data, onUpdate }) => {
       return attributesMap;
     };
 
+    const additionalStringToAdditionalMap = (additionalString) => {
+      const additionalMap = {"src": "/dog.jpg"};
+      return additionalMap;
+    };
+
     // Recursive function to process each node and build JSON
     const processNode = (node) => {
       if (node.nodeType === Node.ELEMENT_NODE) {
         const type = node.tagName.toLowerCase(); // Get the tag name in lowercase
         const style = node.getAttribute("style");
         const attributesMap = style ? styleStringToAttributesMap(style) : {};
+        const additional = type == "img" ? additionalStringToAdditionalMap(node.getAttribute("additional")) : {};
         const children = Array.from(node.childNodes)
           .map(processNode)
           .filter(Boolean); // Process child nodes recursively
 
+        const tyype = type == "img" ? "Image" : type.charAt(0).toUpperCase() + type.slice(1);
+
         return {
-          type: type.charAt(0).toUpperCase() + type.slice(1),
+          type: tyype,
           children,
           attributesMap,
+          additional,
         }; // Capitalize the first letter of type
       } else if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
         // If a text node has content, treat it as a special case, potentially as a Text type if needed
