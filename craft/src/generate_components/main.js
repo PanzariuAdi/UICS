@@ -259,37 +259,48 @@ const HtmlCodePage = ({ data, onUpdate }) => {
     setHtmlString(event.target.value);
   };
 
-  const parseHtmlLikeContentToJson = (htmlString) => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(`<div>${htmlString}</div>`, "text/html");
+  function parseHtmlLikeContentToJson(htmlString) {
+    // Helper to convert style string to JSON attributesMap
+    const styleStringToAttributesMap = (styleString) => {
+      const attributesMap = {};
+      styleString.split(";").forEach((style) => {
+        const [key, value] = style.split(":").map((s) => s.trim());
+        if (!key || !value) return;
+        // Convert CSS property names to camelCase and prefix with 'has' if necessary
+        const jsonKey = key.replace(/(-\w)/g, (g) => g[1].toUpperCase());
+        attributesMap[jsonKey] = value;
+      });
+      return attributesMap;
+    };
+
+    // Recursive function to process each node and build JSON
     const processNode = (node) => {
-      const json = { children: [] };
       if (node.nodeType === Node.ELEMENT_NODE) {
-        json.type = node.tagName;
-        const styleString = node.getAttribute("style");
-        if (styleString) {
-          json.attributesMap = styleString.split(";").reduce((acc, current) => {
-            const [key, value] = current.split(":").map((part) => part.trim());
-            if (key && value) {
-              acc[key] = value;
-            }
-            return acc;
-          }, {});
-        }
-        node.childNodes.forEach((child) => {
-          const childJson = processNode(child);
-          if (childJson) {
-            json.children.push(childJson);
-          }
-        });
-        return json;
+        const type = node.tagName.toLowerCase(); // Get the tag name in lowercase
+        const style = node.getAttribute("style");
+        const attributesMap = style ? styleStringToAttributesMap(style) : {};
+        const children = Array.from(node.childNodes)
+          .map(processNode)
+          .filter(Boolean); // Process child nodes recursively
+
+        return {
+          type: type.charAt(0).toUpperCase() + type.slice(1),
+          children,
+          attributesMap,
+        }; // Capitalize the first letter of type
       } else if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
-        return { type: "Text", text: node.textContent.trim() };
+        // If a text node has content, treat it as a special case, potentially as a Text type if needed
+        // This behavior depends on how you want to handle text nodes in your JSON
+        return null; // For this example, we're ignoring standalone text nodes
       }
     };
-    const rootNode = doc.body.firstChild;
-    return processNode(rootNode);
-  };
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, "text/html");
+    const rootElement = doc.body.firstChild; // Assuming a single root element for simplicity
+
+    return processNode(rootElement);
+  }
 
   const handleUpdate = () => {
     const updatedJson = parseHtmlLikeContentToJson(htmlString);
