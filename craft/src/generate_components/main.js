@@ -299,7 +299,9 @@ const HtmlCodePage = ({ data, onUpdate }) => {
         onChange={handleChange}
         className="block p-2.5 w-full text-sm"
       ></textarea>
-      <button onClick={handleUpdate} className="your-update-button-classes">
+      <button onClick={handleUpdate}
+        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 my-5"
+       >
         Update
       </button>
     </>
@@ -335,3 +337,6 @@ const Test = () => {
 };
 
 export default Test;
+
+// TO DO : ONTOLOGY WITH ALIGN AND DEFAULT VALUES BETTER
+// REPAIR THE FUCK THE PX
