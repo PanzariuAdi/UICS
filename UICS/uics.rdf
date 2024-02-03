@@ -34,6 +34,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#backgroundImage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#backgroundImage"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#borderRadius -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#borderRadius"/>
+    
+
+
     <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#box-size -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#box-size"/>
@@ -49,6 +61,12 @@
     <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#fontSize -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#fontSize"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#height -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#height"/>
     
 
 
@@ -85,6 +103,12 @@
     <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#textAlign -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#textAlign"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#transition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#transition"/>
     
 
 
@@ -193,6 +217,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#ListItem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#ListItem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#StructuralElements"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#Navbar -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#Navbar">
@@ -286,6 +318,10 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#accordion">
         <rdf:type rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#Accordion"/>
+        <ont:backgroundColor>white</ont:backgroundColor>
+        <ont:color>black</ont:color>
+        <ont:margin>5px</ont:margin>
+        <ont:padding>20px</ont:padding>
     </owl:NamedIndividual>
     
 
@@ -294,7 +330,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#banner">
         <rdf:type rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#Banner"/>
-        <ont:text>This is a banner</ont:text>
+        <ont:backgroundImage>url(&apos;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6hUzz-bHqvRkeKL1lY-DwKoAf5ALvCCycnqz9RglrGQ&amp;s&apos;)</ont:backgroundImage>
+        <ont:height>200px</ont:height>
+        <ont:text>CAINI PANA LA MOARTE</ont:text>
     </owl:NamedIndividual>
     
 
@@ -304,7 +342,10 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#button">
         <rdf:type rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#Button"/>
         <ont:backgroundColor>black</ont:backgroundColor>
+        <ont:borderRadius>10px</ont:borderRadius>
         <ont:color>white</ont:color>
+        <ont:margin>5px</ont:margin>
+        <ont:padding>20px</ont:padding>
         <ont:text>Button</ont:text>
     </owl:NamedIndividual>
     
@@ -326,11 +367,11 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#header">
         <rdf:type rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#Header"/>
-        <ont:align>center</ont:align>
         <ont:backgroundColor>red</ont:backgroundColor>
         <ont:color>white</ont:color>
-        <ont:padding rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</ont:padding>
+        <ont:padding>50px</ont:padding>
         <ont:text>This is a header</ont:text>
+        <ont:textAlign>left</ont:textAlign>
     </owl:NamedIndividual>
     
 
@@ -339,8 +380,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#image">
         <rdf:type rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#Image"/>
-        <ont:margin rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20</ont:margin>
-        <ont:padding rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20</ont:padding>
+        <ont:margin>20px</ont:margin>
+        <ont:padding>20px</ont:padding>
     </owl:NamedIndividual>
     
 
@@ -369,6 +410,18 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#list">
         <rdf:type rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#List"/>
+        <ont:color>black</ont:color>
+        <ont:margin>10px</ont:margin>
+        <ont:padding>10px</ont:padding>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adi/ontologies/2024/0/ont#listItem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#listItem">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#ListItem"/>
+        <ont:text>list item</ont:text>
     </owl:NamedIndividual>
     
 
@@ -397,6 +450,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#photoGallery">
         <rdf:type rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#PhotoGallery"/>
+        <ont:text>Photo gallery</ont:text>
     </owl:NamedIndividual>
     
 
@@ -405,7 +459,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adi/ontologies/2024/0/ont#section">
         <rdf:type rdf:resource="http://www.semanticweb.org/adi/ontologies/2024/0/ont#Section"/>
-        <ont:text>This is a section</ont:text>
     </owl:NamedIndividual>
     
 

@@ -34,6 +34,7 @@ public class LanguageService {
 
         Node currentNode = getNodeFromResult(result);
         GraphUtils.addCustomStyles(root, currentNode);
+        System.out.println(root.getStyles());
 
         for (int i = 0; i < root.getCount(); i++) {
             parent.addChild(currentNode);

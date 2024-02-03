@@ -16,7 +16,7 @@ public class InputController {
 
     @GetMapping("/")
     public Node getAllNodes(@RequestParam String input) {
-        return languageService.getNodes(input.toLowerCase());
+        return languageService.getNodes(input);
     }
 
 }

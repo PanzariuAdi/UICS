@@ -133,7 +133,7 @@ const convertToCssProperty = (key, value) => {
   switch (key) {
     case "hasColor":
       return { color: value };
-    case "hasAlign":
+    case "textAlign":
       return { textAlign: value };
     case "hasFontSize":
       return { fontSize: `${value}` };
@@ -176,7 +176,7 @@ const renderComponentFromJSON = (json, key) => {
   const textContent = attributesMap?.text; // Extract text content if available
 
   return (
-    <Component key={key} style={style} >
+    <Component key={key} style={style}  >
       {textContent && <div>{textContent} </div>}{" "}
       {/* Render text content if available */}
       {children &&
@@ -202,6 +202,7 @@ const renderComponentToString = (json, indentLevel = 0) => {
   const styleString = Object.entries(style)
     .map(([key, value]) => `${key}: ${value}`)
     .join("; ");
+
   const textContent = attributesMap?.text || "";
   
   const indent = " ".repeat(indentLevel * 2); // Adjust indent size as needed
@@ -216,7 +217,10 @@ const renderComponentToString = (json, indentLevel = 0) => {
       .join("");
   }
 
-  let openingTag = `<${tag} style="${styleString}">`;
+  const optionalSrc = tag == "Image" ? "src=\"/dog.jpg\"" : "";
+  console.log(tag);
+
+  let openingTag = `<${tag} style="${styleString}" ${optionalSrc}>`;
   let closingTag = `</${tag}>`;
 
   if (childrenString) {
@@ -260,7 +264,11 @@ const HtmlCodePage = ({ data, onUpdate }) => {
       if (node.nodeType === Node.ELEMENT_NODE) {
         const type = node.tagName.toLowerCase(); // Get the tag name in lowercase
         const style = node.getAttribute("style");
+        const src = node.getAttribute("src");
+
         const attributesMap = style ? styleStringToAttributesMap(style) : {};
+        const additionalMap = {"src": src};
+
         const children = Array.from(node.childNodes)
           .map(processNode)
           .filter(Boolean); // Process child nodes recursively
@@ -271,6 +279,7 @@ const HtmlCodePage = ({ data, onUpdate }) => {
           type: tyype,
           children,
           attributesMap,
+          additionalMap,
         }; // Capitalize the first letter of type
       } else if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
         // If a text node has content, treat it as a special case, potentially as a Text type if needed
