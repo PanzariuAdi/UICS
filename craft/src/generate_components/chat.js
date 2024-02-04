@@ -9,7 +9,7 @@ const ToggleableTextBox = (props) => {
   };
 
   const handeClick = () => {
-    const requestUrl = `http://localhost:8080/?input=${text}`;
+    const requestUrl = `https://uics-backend.onrender.com/?input=${text}`;
     fetch(requestUrl)
       .then((response) => response.json())
       .then((data) => {

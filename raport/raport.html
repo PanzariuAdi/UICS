@@ -30,8 +30,11 @@
     <body>
         <section role="doc-introduction">
             <h2>Introduction</h2>
-            <p>OWL-based ontology project that generates UI components via a SPARQL end-point. This knowledge model will be used to cleverly suggest and generate – via a SPARQL end-point – the proper controls for various Web interfaces by using a set of controlled language constructs such as "Build a section with I images|videos and P paragraphs placed below|above|left|right" or "Build main section having a user profile with minimum 2 paragraph, 1 image and a submit button labeled "Edit" vertically|horizontally arranged". Several keywords/parameters could be inserted to express the interface designer's intention – e.g., a section could have a specific role (content, navigation, download, footer, photo gallery, calendar, slider, and so on); using a direction indicator such as "ltr" (left to right); instead of "image", some refined terms could be used to specify the semantics: "photo", "diagram", "logo", "chart" with some modifiers like "big", "small", "medium", "responsive" (examples: "Build an aside|main section with 2 small photos 1 search input 2 nav links 1 download button", "Build a table with 5 images 5 paragraphs 5 buttons by rows|columns" – if 'columns' is chosen, the tool automatically can generate 5 columns, each column having 1 image, 1 paragraph, and 1 button). Test and exemplify your proposal for at least 2 use-cases.</p>
-        </section>
+            <p>OWL-based ontology project that generates UI components via a SPARQL end-point. This knowledge model will be used to cleverly suggest and generate – via a SPARQL end-point – 
+                the proper controls for various Web interfaces by using a set of controlled language constructs such as "Build a section with I images|videos and P paragraphs placed below|above|left|right" or 
+                "Build main section having a user profile with minimum 2 paragraph, 1 image and a submit button labeled "Edit" vertically|horizontally arranged". 
+                Several keywords/parameters could be inserted to express the interface designer's intention – e.g., a section could have a specific role (content, navigation, download, footer, photo gallery, calendar, slider, and so on); 
+            </section>
 
         <section>
             <h2>Principal components</h2>
@@ -56,9 +59,309 @@
                             <li>
                                 <h4>Main modules</h4>
                                 <p><b>Language processor: </b>performs semantic parsing and validation to convert user input into a structured and machine-readable representation.</p>
+                                <p>
+                                        <p>
+                                            Initially, we wanted to have a format that the user needs to respect in order for the apppcation to work, and parse it using regex. For example, we thinked of a pattern pke : <i>{component} {size} {color} </i>
+                                        </p>
+                                        <p>
+                                            Turned out that this was very hard to work on more complex components, with multiple children, and also taking in consideration that the children can also have components, attributes and so on.
+                                        </p>
+                                        <p>
+                                            After this idea, we oriented to a NLP processing, where we did not depend any more on a specific format, but on a “vali” input, on which we can scale the application a lot better.
+                                            For now, we are just using NLP, but the algorithm can be improved very much by using both nlp and regex parsing.
+                                        </p>
+                                        <p>
+                                            In order to create and handle the web components, we constructed a graph similar to the HTML DOM. For each component , we represent it a node with the next values:
+                                            <ol>
+                                                <li>component, that represents the html component that will be created (ex. header, footer, title, image etc.);</li>
+                                                <li>count, that represents how many times this component will repeat;</li>
+                                                <li>A list of styles, that are the css styles that will be appped to the component;</li>
+                                                <li>A list of other nodes, that are the children of the current node.</li>
+                                            </ol>
+                                        </p>
+                                        <p>
+                                            The current processing is a simple one, and follows the next rules:
+                                            <ol>
+                                                <li>
+                                                    When “NOUN” is detected, it means that we have the type of the component (header, title, image);
+                                                </li>
+                                                <li>
+                                                    When “NUM” is detected, the way we handle it is to set how many instances of that component to be created. For example, header with 3 title;
+                                                </li>
+                                                <li>
+                                                    When “CCONJ” (“and”) is detected, it means that the user wants to create a component that it “brother” with the current component, so we start creating a new component. For example, header with title and image;
+                                                </li>
+                                                <li>
+                                                    When “ADP” (“with”) is detected, it means that the user wants to create a direct child to the current component. For example, header with image;
+                                                </li>
+                                                <li>
+                                                    When “PUNCT” is detected, we have two situations : 
+                                                    <ol>
+                                                        <li>
+                                                            either the user created a component, and he wants to create another, so he will type “,”. For example, header, section, footer. This input will be translated into  3 different components.
+                                                        </li>
+                                                        <li>
+                                                            the end of the query has been processed, and in order to process the last node of the graph, the last character in the input will be DOT.
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                            </ol>
+                                        </p>
+
+                                        <p>
+                                            To achieve this NLP processing, we used the library from <i>org.apache.opennlp</i>. Two components from this library
+                                            were used, <i>POSTagger</i> and
+                                            <i>Tokenizer</i>. Also two more files for English language were downloaded and loaded into the application.
+                                        </p>
+
+                                        <p>
+                                            Example of how the graph is computed, for the next input : <i>red header with 2 image, banner, 2 blue accordion with image, right section with 8 paragraph, centered footer with banner .</i>
+
+                                            <div>
+                                                <pre>
+└── 1 section[]
+    ├── 1 header[red]
+    │   └── 2 image[]
+    ├── 1 banner[]
+    ├── 2 accordion[blue]
+    │   └── 1 image[]
+    ├── 1 section[]
+    │   └── 8 paragraph[]
+    └── 1 footer[centered]
+        └── 1 banner[]
+                                                </pre>
+                                            </div>
+
+                                        We can see how the attributes were applied to correctly for every component. This output was directly taken from the application, where a function was implemented that 
+                                        traverse the graph using dfs algorithm and print it.
+                                        </p>
+                                </p>
+                                
                                 <p><b>SPARQL Endpoint: </b>provides a standard communication interface for interacting with the RDF data store.</p>
+                                <p>
+                                    After the graph is constructed, using the DFS algorithm, we traverse the graph, and for each component, it queries
+                                    the ontology for the default values.
+                                </p>
+                                
+                                <p>This functionality was implemented using <i>jena-fuseki-server</i> from <i>org.apache.jena</i>. When the Spring
+                                    application starts, a sparql endpoint also starts and
+                                    loads a local ontology.</p>
+
+                                <div>
+                                    <pre>
+@Configuration
+public class SparqlConfiguration {
+    private final String RDF_PATH = "uics.rdf";
+    private final String PREFIX = "http://www.semanticweb.org/adi/ontologies/2024/0/ont/";
+
+    @Bean
+    public CommandLineRunner startFusekiServer() {
+        return args -> {
+            Model model = ModelFactory.createDefaultModel();
+
+            InputStream in = FileManager.getInternal().open(RDF_PATH);
+            if (in == null) {
+                throw new IllegalArgumentException("File: " + RDF_PATH + " not found");
+            }
+
+            model.read(in, "");
+            model.setNsPrefix("", PREFIX);
+
+            Dataset dataset = DatasetFactory.create(model);
+
+            FusekiServer server = FusekiServer.create()
+                    .add("/dataset", dataset)
+                    .build();
+            server.start();
+
+            Runtime.getRuntime().addShutdownHook(new Thread(server::stop));
+        };
+    }
+}
+
+                                    </pre>
+                                </div>
+
+                                <p><b>Ontology component</b></p>
+                                <p>
+                                    The ontology was created for mapping existing component properties. At the top level, under owl:Thing, we have <i>WebElement</i>. 
+                                    This web element has 2 direct children: <i>CompositionalElements</i> and <i>StructuralElements</i>. The compositional elements are of two types :
+                                    TextBasedElement and NonTextBasedElements. All these refers to components that can not contain any other components. Examples of these components are :
+                                    <ol>
+                                        <li>Button</li>
+                                        <li>Image</li>
+                                        <li>Input</li>
+                                        <li>Paragraph</li>
+                                        <li>Title</li>
+                                    </ol>
+
+                                    The structural elements are elements that "structure" other elements. The structural elements are :
+                                    <ol>    
+                                        <li>List</li>
+                                        <li>ListItem</li>
+                                        <li>Accordion</li>
+                                        <li>Banner</li>
+                                        <li>Header</li>
+                                        <li>Footer</li>
+                                        <li>PhotoGallery</li>
+                                    </ol>
+                                </p>
+
+                                The structure can be better seen here :
+
+                                <img src="images/ontology.png" alt="ontology" style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
                                 <p><b>Ontology query component: </b>extracting information about UI components, their properties, and relationships based on the ontology.</p>
+                                <p>
+                                    <i>SparqlQueryExecutor</i> class is responsable for query-ing the ontology. It uses the functionality from <i>org.apache.jena</i> library, and it searches in the 
+                                    ontology for the individuals, and retrieve them with all their fields (these fields represents the css defalt values).
+                                </p>
+
+                                <div>
+                                    <pre>
+private String getFormattedString(String component) {
+    return String.format("""
+        PREFIX owl: http://www.w3.org/2002/07/owl#
+        PREFIX rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+        PREFIX rdfs: http://www.w3.org/2000/01/rdf-schema#
+        PREFIX uics: http://www.semanticweb.org/adi/ontologies/2024/0/ont#
+             
+        SELECT ?property ?value
+        WHERE {
+            uics:%s ?property ?value .
+        }
+        """, component);
+}
+
+                                    </pre>
+                                </div>
+
+                                <p>
+                                    After the sparql query is constructed, using the next code, the application queries the ontology and return the response in JSON format :
+                                </p>
+
+                                <div>
+                                    <pre>
+try (QueryExecution queryExecution = QueryExecutionFactory.sparqlService(FUSEKI_ENDPOINT, sparqlQuery)) {
+    ResultSet resultSet = queryExecution.execSelect();
+    return getJsonResult(resultSet);
+}
+                                    </pre>
+                                </div>
+
                                 <p><b>UI Component Generator: </b>Generates the UI component and styles it with the data obtained from ontology.</p>
+                                <p>
+                                    After the default values from the ontology are received, this component creates the new component, traverses the styles array, categorizes the styles (ex. text-align, color) and applies it to the component. Every component is, again, represented as a node in a graph, and the node has the next attributes:
+                                    <ol>
+                                        <li>type (ex. header, footer, title, image, paragraph) </li>
+                                        <li>attributesMap, where there are stored the mapped styles mentioned in the upper paragraph. For example, when we receive “red” from the client, in this map we will have {“color”: “red”};</li>
+                                        <li>a list of nodes that represents the children of the current node.</li>
+                                    </ol>
+                                </p>
+
+                                <p>
+                                    The result is return to the client in JSON format.
+                                     The json response for the input <i>red header with image, section with title and 3 paragraph, blue footer with yellow title .</i> is :
+                                    <div>
+                                        <pre>
+{
+    "type": "Section",
+    "children": [
+        {
+            "type": "Header",
+            "children": [
+                {
+                    "type": "Image",
+                    "children": [],
+                    "attributesMap": {
+                        "padding": "20px",
+                        "margin": "20px"
+                    }
+                }
+            ],
+            "attributesMap": {
+                "padding": "50px",
+                "backgroundColor": "red",
+                "color": "gray",
+                "textAlign": "left",
+                "text": "This is a header"
+            }
+        },
+        {
+            "type": "Section",
+            "children": [
+                {
+                    "type": "Title",
+                    "children": [],
+                    "attributesMap": {
+                        "color": "red",
+                        "textAlign": "left",
+                        "fontSize": "large",
+                        "text": "This is a title"
+                    }
+                },
+                {
+                    "type": "Paragraph",
+                    "children": [],
+                    "attributesMap": {
+                        "color": "black",
+                        "textAlign": "left",
+                        "fontSize": "small",
+                        "text": "This is a paragraph"
+                    }
+                },
+                {
+                    "type": "Paragraph",
+                    "children": [],
+                    "attributesMap": {
+                        "color": "black",
+                        "textAlign": "left",
+                        "fontSize": "small",
+                        "text": "This is a paragraph"
+                    }
+                },
+                {
+                    "type": "Paragraph",
+                    "children": [],
+                    "attributesMap": {
+                        "color": "black",
+                        "textAlign": "left",
+                        "fontSize": "small",
+                        "text": "This is a paragraph"
+                    }
+                }
+            ],
+            "attributesMap": {}
+        },
+        {
+            "type": "Footer",
+            "children": [
+                {
+                    "type": "Title",
+                    "children": [],
+                    "attributesMap": {
+                        "color": "yellow",
+                        "textAlign": "left",
+                        "fontSize": "large",
+                        "text": "This is a title"
+                    }
+                }
+            ],
+            "attributesMap": {
+                "padding": "50",
+                "backgroundColor": "yellow",
+                "color": "blue",
+                "text": "This is a footer",
+                "align": "center"
+            }
+        }
+    ],
+    "attributesMap": {}
+}
+                                        </pre>
+                                    </div>
+
+                                We can see that also the adjectives were applied.
+                                </p>
                             </li>
                         </ul>
                 </li>

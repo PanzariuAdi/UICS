@@ -1,19 +1,13 @@
 package uaic.ro.UICS.sparql;
 
-import jakarta.json.Json;
-import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
-import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.query.ResultSetFormatter;
 import org.springframework.stereotype.Component;
 import uaic.ro.UICS.languageProcessor.LanguageNode;
 
 import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 @Component
 public class SparqlQueryExecutor {
