@@ -221,7 +221,6 @@
                 </li>
                 <li>
                     <h3>Backend</h3>
-                        Technologies used : Java and Spring Boot.
                         <ul>
                             <li>
                                 <h4>Main modules</h4>
@@ -545,6 +544,65 @@ try (QueryExecution queryExecution = QueryExecutionFactory.sparqlService(FUSEKI_
 
             <h3>Level 2 diagram</h3>
             <img src="images/C4-2.png" alt="C4-level2">
+        </section>
+
+        <section>
+            <h2>Preliminary considerations about the internal data structure/models</h2>
+            <p>We need to define the ontology that represents the knowledge model for UI components. This includes classes, properties, relationships and constaints. </p>
+
+             <p>We are leveraging Protege to create a custom ontology for our web development project. At the top level of our ontology, we are incorporating the <a href="https://schema.org/WebPageElement" target="_blank">WebPageElement</a> type from Schema.org.
+                Utilizing <i>cssSelector</i> in tandem with frameworks such as Tailwind CSS, we are able to manipulate the styling of our components. Additionally, we are integrating other Schema.org types like <i>CreativeWork</i> for headlines and text, <i>ImageObject</i> for images, <i>VideoObject</i> for videos, <i>WebSite</i> for overall website representation, and <i>ListItem</i> for structuring lists, among others.
+                Through this ontology modeling approach, we can create more complex components such as a <i>navbar</i> and a <i>photo gallery</i>.
+             </p>
+
+
+
+            <p>The UI components and the attributes that we want for now to represent are : </p>
+            <ol>
+                <li>
+                    Sections : 
+                    <ul>
+                        <li>Content</li>
+                        <li>Navigation</li>
+                        <li>Download</li>
+                        <li>Footer</li>
+                        <li>Photo gallery</li>
+                        <li>Calendar</li>
+                        <li>Slider</li>
+                    </ul>
+                </li>
+                <li>
+                    Text based : 
+                    <ul>
+                        <li>Paragraphs</li>
+                        <li>Titles</li>
+                    </ul>
+                </li>
+                <li>
+                    Directions : 
+                    <ul>
+                        <li>ltr (left to right)</li>
+                        <li>rtl (right to left)</li>
+                    </ul>
+                </li>
+                <li>
+                    Align : 
+                    <ul>
+                        <li>left</li>
+                        <li>center</li>
+                        <li>right</li>
+                    </ul>
+                </li>
+
+                <li>
+                    Colors : 
+                    <ul>
+                        <li>red</li>
+                        <li>green</li>
+                        <li>blue</li>
+                    </ul>
+                </li>
+            </ol>
         </section>
 
         <section>
