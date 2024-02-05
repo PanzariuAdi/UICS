@@ -41,17 +41,183 @@
             <ol>
                 <li>
                     <h3>Frontend</h3>
-                        <ul>
-                            <li>
-                                <h4>Description</h4>
-                                <p>The user interface that interacts with end users.</p>
-                            </li>
-                            <li>
-                                <h4>Main modules</h4>
-                                <p><b>User input Interface:</b> A text input that allow users to write UI components using natural language.</p>
-                                <p><b>UI Rendering:</b> A page where that will render the result from the user's query or an error message if the input is invalid.</p>
-                            </li>
-                        </ul>
+                    <ul>
+                        <li>
+                            <h4>Description</h4>
+                            <p>The frontend of our application is designed to interact seamlessly with the backend, offering a dynamic user interface for creating, visualizing, and modifying web components based on user input.</p>
+                        </li>
+                        <li>
+                            <h4>Main Components</h4>
+                            <ul>
+                                <li>
+                                    <p><b>Chat:</b> This component serves as the main interface for user interaction, allowing users to input commands that will be processed by the backend to generate web components.</p>
+                                </li>
+                                <li>
+                                    <p><b>ToggleableTextBox:</b> A component that provides a text input for users to enter commands. Upon submission, it communicates with the backend to fetch the JSON representation of the desired UI components and updates the state accordingly.</p>
+                                </li>
+                                <li>
+                                    <p><b>HtmlCodePage:</b> Allows users to see and edit the HTML-like string representation of the components they have generated. Users can manually edit this representation, and the component provides functionality to update the visual components based on these changes.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Key Functions</h4>
+                            <ul>
+                                <li>
+                                    <p><b>convertAttributesToStyle:</b> Transforms an attributes map (key-value pairs) into a style object that can be applied to React components. This function supports converting CSS property names from various formats to camelCase, which is the format expected by React's style prop.</p>
+                               
+                                    <div>
+<pre>
+    const convertAttributesToStyle = (attributesMap) => {
+        return attributesMap
+            ? Object.keys(attributesMap).reduce((style, key) => {
+                const camelCaseKey = key.replace(/-([a-z])/g, (match, letter) =>
+                letter.toLowerCase()
+                );
+                const cssProperty = convertToCssProperty(
+                camelCaseKey,
+                attributesMap[key]
+                );
+                return { ...style, ...cssProperty };
+            }, {})
+            : {};
+        };
+</pre>
+                                    </div>
+                               
+                                </li>
+                                <li>
+                                    <p><b>renderComponentFromJSON:</b> Dynamically renders React components based on a JSON object. This function uses a mapping from component types (specified in the JSON) to React components and recursively renders children and applies styles.</p>
+                                </li>
+                                    <div>
+<pre>
+    const renderComponentFromJSON = (json, key) => {
+        if (!json || typeof json !== "object") return null;
+        
+        const { type, children, attributesMap } = json;
+        
+        const componentMap = {
+            Section: Section,
+            Title: Title,
+            Header: Header,
+            Paragraph: Paragraph,
+            Footer: Footer,
+            Navbar: Navbar,
+            Button: Button,
+            Image: Image,
+            Card: Card,
+            List: List,
+            ListItem: ListItem,
+            Accordion: Accordion,
+            Table: Table,
+            Banner: Banner,
+            PhotoGallery: PhotoGallery,
+        };
+        
+        const Component = componentMap[type] || "div"; // Fallback to 'div' if type is null or undefined
+        const style = convertAttributesToStyle(attributesMap);
+        const textContent = attributesMap?.text; // Extract text content if available
+        
+        return (
+            Component key={key} style={style}  
+            {textContent && "<div>{textContent} </div>}{" "}
+            {/* Render text content if available */}
+            {children &&
+                children.map((child, index) =>
+                typeof child === "object" ? (
+                    React.Fragment key={index}
+                    {renderComponentFromJSON(child, index)}
+                    React.Fragment
+                ) : (
+                    React.Fragment key={index}>{child} React.Fragment
+                )
+                )}
+            Component
+        );
+        };
+</pre>
+                                    </div>
+                                <li>
+                                    <p><b>renderComponentToString:</b> Converts a JSON representation of components back into an HTML-like string. This is particularly useful for the HtmlCodePage component, allowing users to view and edit the generated markup.</p>
+                                </li>
+                                <div>
+<pre>
+    const renderComponentToString = (json, indentLevel = 0) => {
+        if (!json || typeof json !== "object") return "";
+        
+        const { type, children, attributesMap } = json;
+        const tag = type || "div";
+        const style = convertAttributesToStyle(attributesMap);
+        const styleString = Object.entries(style)
+            .map(([key, value]) => `${key}: ${value}`)
+            .join("; ");
+        
+        const textContent = attributesMap?.text || "";
+        
+        const indent = " ".repeat(indentLevel * 2); // Adjust indent size as needed
+        let childrenString = "";
+        if (children) {
+            childrenString = children
+            .map((child) =>
+                typeof child === "object"
+                ? "\n" + renderComponentToString(child, indentLevel + 1)
+                : child
+            )
+            .join("");
+        }
+        
+        const optionalSrc = tag == "Image" ? "src=\"/dog.jpg\"" : "";
+        console.log(tag);
+        
+        let openingTag = `<${tag} style="${styleString}" ${optionalSrc}>`;
+        let closingTag = `</${tag}>`;
+        
+        if (childrenString) {
+            return `${indent}${openingTag}\n${indent}  ${textContent}${childrenString}\n${indent}${closingTag}`;
+        } else {
+            return `${indent}${openingTag}${textContent}${closingTag}`;
+        }
+        };
+</pre>
+                                </div>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Interactivity</h4>
+                            <p>The application's frontend facilitates interactive web component generation through user inputs. It includes features like a chat interface for inputting commands to generate UI components, a toggleable text box for direct input and backend communication, real-time visual feedback of the generated UI components, and an editable HTML-like representation of the components for manual modification and refinement.</p>
+                        </li>
+                        <li>
+                            <h4>Integration with Backend</h4>
+                            <p>The frontend interacts with the backend through HTTP requests, sending user inputs and receiving JSON representations of web components. The backend is responsible for parsing these inputs using NLP techniques, constructing a component graph, and generating the corresponding JSON objects. The frontend then uses this JSON to render the components on the screen.</p>
+                        </li>
+
+                        <li>
+                            <h4>Example Usage</h4>
+                            <ul>
+                                <li>
+                                    <p><b>User Input:</b> Through the ToggleableTextBox, users can input descriptions of the UI components they wish to generate.</p>
+                                </li>
+                                <li>
+                                    <p><b>Component Generation:</b> Upon submission, the input is sent to the backend, which returns a JSON object representing the desired UI components.</p>
+                                </li>
+                                <li>
+                                    <p><b>Visualization and Editing:</b> The HtmlCodePage component allows users to see the generated components in an HTML-like format and edit them as needed.</p>
+                                </li>
+                                <li>
+                                    <p><b> Update and Render:</b> Users can update the visual representation of the components based on their edits in the HtmlCodePage.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Example of Code Execution</h4>
+                            <p>Here is an example illustrating how a user's input can be transformed into a UI component:</p>
+                                <li><b>Input:</b> "header black with 2 paragraph blue , accordion with 2 image , accordion with banner , photoGallery ,footer."</li>
+                                <li><b>Backend Processing:</b> The input is parsed and converted into a JSON object representing the header component with 2 paragraph child and specified styles one accordion wiht 2 image child , one accordion with banner child, a photoGallery and a banner .</li>
+                                <li><b>Result:</b>
+                                    <img src="images/generated_page.png" alt="generate" style="  display: block; margin-left: auto; margin-right: auto; width: 100%;">
+                        </li>
+                        
+                    </ul>
                 </li>
                 <li>
                     <h3>Backend</h3>
